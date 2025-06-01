@@ -142,139 +142,73 @@
     
 
     <!-- ======= My Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
+<section id="portfolio" class="portfolio">
+  <div class="container">
 
-        <div class="section-title">
-          <span>Портфолио Работ</span>
-          <h2>Портфолио Работ</h2>
-          <p>Работы сделанные в рамках обучения в университете</p>
-        </div>
+    <div class="section-title">
+      <span>Портфолио Работ</span>
+      <h2>Портфолио Работ</h2>
+      <p>Работы сделанные в рамках обучения в университете</p>
+    </div>
 
-        <ul id="portfolio-flters" class="d-flex justify-content-center">
-          <li data-filter=".filter-first">1 курс</li>
-          <li data-filter=".filter-second">2 курс</li>
-          <li data-filter=".filter-third">3 курс</li>
-          <li data-filter=".filter-forth ">4 курс</li>
-        </ul>
+    <!-- Список курсов -->
+    <ul id="courses" class="d-flex justify-content-center">
+      <li class="course" data-course="1">1 курс</li>
+      <li class="course" data-course="2">2 курс</li>
+      <li class="course" data-course="3">3 курс</li>
+      <li class="course" data-course="4">4 курс</li>
+    </ul>
 
-        <div class="row portfolio-container">
+    <!-- Все семестры сгруппируем по курсам -->
+    <div id="semesters-container">
+      <ul class="semesters hidden" data-course="1">
+        <li class="semester" data-semester="first_sem">1 семестр</li>
+        <li class="semester" data-semester="second_sem">2 семестр</li>
+      </ul>
+      <ul class="semesters hidden" data-course="2">
+        <li class="semester" data-semester="third_sem">3 семестр</li>
+        <li class="semester" data-semester="forth_sem">4 семестр</li>
+      </ul>
+      <ul class="semesters hidden" data-course="3">
+        <li class="semester" data-semester="fifth_sem">5 семестр</li>
+        <li class="semester" data-semester="sixth_sem">6 семестр</li>
+      </ul>
+      <ul class="semesters hidden" data-course="4">
+        <li class="semester" data-semester="seventh_sem">7 семестр</li>
+        <li class="semester" data-semester="eight_sem">8 семестр</li>
+      </ul>
+    </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-first  ">
-            <ul id="portfolio-flters" class="d-flex justify-content-center">
-              <li data-filter=".filter-first_sem">1 семестр</li>
-              <li data-filter=".filter-second_sem">2 семестр</li>
-            </ul>
-          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-second">
-            <ul id="portfolio-flters" class="d-flex justify-content-center">
-              <li data-filter=".filter-third_sem">3 семестр</li>
-              <li data-filter=".filter-forth_sem">4 семестр</li>
-            </ul>
-          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-third">
-            <ul id="portfolio-flters" class="d-flex justify-content-center">
-              <li data-filter=".filter-fifth_sem">5 семестр</li>
-              <li data-filter=".filter-sixth_sem">6 семестр</li>
-            </ul>
-          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-forth">
-            <ul id="portfolio-flters" class="d-flex justify-content-center">
-              <li data-filter=".filter-seventh_sem">7 семестр</li>
-              <li data-filter=".filter-eight_sem">8 семестр</li>
-            </ul>
-          </div>
-        
 
-        <div class="row portfolio-container"> 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-first_sem">   
-            <a href="https://disk.yandex.ru/d/kcn7HmlgUB6cBQ" class="details-link" title="Ссылка">
-            <div class="portfolio-img"><img src="img/portfolio/portfolio-2.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Информатика</h4>
-              <p></p>
-            </div>
-            </a>
-          </div>
-        </div> 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-first_sem">
-            <a href="https://disk.yandex.ru/d/33FQM2hcSod6bQ" class="details-link" title="Ссылка">
-            <div class="portfolio-img"><img src="img/portfolio/portfolio-2.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>ИТ в математике</h4>
-              <p></p>
-            </div>
-            </a>
-          </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-second_sem">
-            <a href="https://disk.yandex.ru/d/nIj8zqmUyeQbuA" class="details-link" title="Ссылка">
-            <div class="portfolio-img"><img src="img/portfolio/portfolio-3.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>ИТ</h4>
-            </div>
-            </a>
-          </div>
+    <!-- Работы (пока все скрыты) -->
+    <div class="row portfolio-container">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-first_sem">
-            <a href="https://disk.yandex.ru/d/3tn18FTXJKzV9Q" class="details-link" title="Ссылка">
-            <div class="portfolio-img"><img src="img/portfolio/portfolio-3.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Курсовая работа</h4>
-            </div>
-            </a>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-first_sem hidden">
+        <a href="https://disk.yandex.ru/d/kcn7HmlgUB6cBQ" class="details-link" title="Ссылка">
+          <div class="portfolio-img"><img src="img/portfolio/portfolio-2.jpg" class="img-fluid" alt=""></div>
+          <div class="portfolio-info">
+            <h4>Информатика</h4>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-second_sem">
-            <a href="https://disk.yandex.ru/d/SWgs-Im_F4rIIw" class="details-link" title="Ссылка">
-            <div class="portfolio-img"><img src="img/portfolio/portfolio-3.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>ЛАТМ</h4>
-            </div>
-            </a>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-first_sem">
-            <a href="https://disk.yandex.ru/d/zjdz18c-ganRIw" class="details-link" title="Ссылка">
-            <div class="portfolio-img"><img src="img/portfolio/portfolio-3.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>ОКА</h4>
-            </div>
-            </a>
-          </div>
-         
-            <div class="row portfolio-container">
-          <div class="col-lg-4 col-md-6 portfolio-item filter-forth_sem">
-            <a href="https://github.com/Amiiira/2-year-proga-Python.git" class="details-link" title="Ссылка на репозиторий">
-            <div class="portfolio-img"><img src="img/portfolio/portfolio-2.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Программирование</h4>
-            </div>
-            </a>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-forth_sem">
-            <a href="https://disk.yandex.ru/d/Uo5Eg0ziWQ2KJg" class="details-link" title="Ссылка на репозиторий">
-            <div class="portfolio-img"><img src="img/portfolio/portfolio-5.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Базы данных</h4>
-            </div>
-            </a>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-forth_sem">
-            <a href="..." class="details-link" title="Ссылка на репозиторий">
-            <div class="portfolio-img"><img src="img/portfolio/portfolio-3.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Веб-проектирование</h4>
-              <p>Тут пока пусто...</p>
-            </div>
-            </a>
-          </div>
-        </div>
-
+        </a>
       </div>
-    </section><!-- End My Portfolio Section -->
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-second_sem hidden">
+        <a href="https://disk.yandex.ru/d/nIj8zqmUyeQbuA" class="details-link" title="Ссылка">
+          <div class="portfolio-img"><img src="img/portfolio/portfolio-3.jpg" class="img-fluid" alt=""></div>
+          <div class="portfolio-info">
+            <h4>ИТ</h4>
+          </div>
+        </a>
+      </div>
+
+      <!-- И так далее -->
+    </div>
+
+  </div>
+</section>
+
+    <!-- End My Portfolio Section -->
 
     <!-- ======= Contact Me Section ======= -->
     <section id="contact" class="contact">

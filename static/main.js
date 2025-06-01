@@ -1,10 +1,3 @@
-/**
-* Template Name: Laura
-* Updated: May 30 2023 with Bootstrap v5.3.0
-* Template URL: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 (function() {
   "use strict";
 
@@ -195,34 +188,6 @@
   });
 
   /**
-   * Porfolio isotope and filter
-   */
-  window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
-      });
-
-      let portfolioFilters = select('#portfolio-flters li', true);
-
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-
-      }, true);
-    }
-
-  });
-
-  /**
    * Portfolio details slider
    */
   new Swiper('.portfolio-details-slider', {
@@ -238,10 +203,55 @@
       clickable: true
     }
   });
-  
+
   /**
    * Initiate Pure Counter 
    */
   new PureCounter();
 
-})()
+})();
+
+// ============== Мой ДОБАВЛЕННЫЙ код для курсов/семестров/предметов ===============
+document.addEventListener('DOMContentLoaded', function () {
+  const courseButtons = document.querySelectorAll('.course');
+  const semesterLists = document.querySelectorAll('.semesters');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+  // Скрыть все семестры при старте
+  semesterLists.forEach(list => list.classList.add('hidden'));
+
+  courseButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Сначала скрываем все семестры
+      semesterLists.forEach(list => list.classList.add('hidden'));
+
+      // Показываем семестры только выбранного курса
+      const courseId = button.getAttribute('data-course');
+      const courseSemesters = document.querySelector(`.semesters[data-course="${courseId}"]`);
+      if (courseSemesters) {
+        courseSemesters.classList.remove('hidden');
+      }
+
+      // Скрыть все работы
+      portfolioItems.forEach(item => item.classList.add('hidden'));
+    });
+  });
+
+  // При клике на семестр показываем работы
+  document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('semester')) {
+      const semester = e.target.getAttribute('data-semester');
+
+      // Скрыть все работы
+      portfolioItems.forEach(item => item.classList.add('hidden'));
+
+      // Показать только работы текущего семестра
+      portfolioItems.forEach(item => {
+        if (item.classList.contains(`filter-${semester}`)) {
+          item.classList.remove('hidden');
+        }
+      });
+    }
+  });
+});
+
